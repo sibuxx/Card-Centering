@@ -1,0 +1,11 @@
+[     288ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:5177/favicon.ico:0
+[   37946ms] [ERROR] Warning: %s a style property during rerender (%s) when a conflicting property is set (%s) can lead to styling bugs. To avoid this, don't mix shorthand and non-shorthand properties for the same value; instead, replace the shorthand with separate values.%s Removing borderColor border 
+    at button
+    at div
+    at div
+    at main
+    at div
+    at App (http://localhost:5177/src/App.jsx:23:37) @ http://localhost:5177/node_modules/.vite/deps/chunk-HCIN4FJ4.js?v=a85f7c58:518
+[  371329ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:5177/src/App.jsx?t=1774554415015:0
+[  371330ms] [ERROR] [vite] Failed to reload /src/App.jsx. This could be due to syntax errors or importing non-existent modules. (see errors above) @ http://localhost:5177/@vite/client:881
+[  389008ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:5177/src/App.jsx?t=1774554432592:0
