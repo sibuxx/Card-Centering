@@ -120,8 +120,7 @@ export default function App() {
 
       {/* Main Content */}
       <div style={styles.mainWrapper}>
-        {page === 'grader' ? (
-          <main style={styles.main}>
+        <main style={{ ...styles.main, display: page === 'grader' ? 'flex' : 'none' }}>
             {/* Top: images side by side, full width 2 columns */}
             <div style={styles.topRow}>
               <div style={fullscreen === 'front' ? styles.imageCardFullscreen : styles.imageCard}>
@@ -200,11 +199,9 @@ export default function App() {
               includeBack={includeBack}
             />
           </main>
-        ) : (
-          <main style={styles.guidelinesMain}>
+        <main style={{ ...styles.guidelinesMain, display: page === 'guidelines' ? 'block' : 'none' }}>
             <Guidelines allStandards={allStandards} />
           </main>
-        )}
         <footer style={styles.footer}>&copy; {new Date().getFullYear()} Perfect Centering</footer>
       </div>
     </div>
