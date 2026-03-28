@@ -205,12 +205,12 @@ export default function ImageCanvas({ label, imageUrl, onChange, rotation = 0, o
   if (!imageUrl) {
     return (
       <div style={styles.placeholder} onClick={onClickPlaceholder}>
-        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#555" strokeWidth="1.5">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#475569" strokeWidth="1.5">
           <rect x="3" y="3" width="18" height="18" rx="2" />
           <circle cx="8.5" cy="8.5" r="1.5" />
           <path d="m21 15-5-5L5 21" />
         </svg>
-        <span style={{ color: '#555', fontSize: 12 }}>Upload or drop {label} image</span>
+        <span style={{ color: '#94a3b8', fontSize: 12 }}>Upload or drop {label} image</span>
       </div>
     );
   }
@@ -308,7 +308,7 @@ const styles = {
     flex: '1 1 0', height: 0, minHeight: 80,
     display: 'flex', flexDirection: 'column',
     alignItems: 'center', justifyContent: 'center', gap: 8,
-    border: '2px dashed #2e2a45', borderRadius: 8, background: '#0c0a14',
+    border: '2px dashed #334155', borderRadius: 8, background: '#0f172a',
     cursor: 'pointer',
   },
   container: {

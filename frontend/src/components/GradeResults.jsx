@@ -72,7 +72,7 @@ export default function GradeResults({ allStandards, frontRatios, backRatios, in
       <div style={styles.row}>
         {results.map(({ company, grade }) => {
           const isBelow = grade?.grade === 'Below';
-          const accent = COMPANY_COLORS[company.code] || '#7c3aed';
+          const accent = COMPANY_COLORS[company.code] || '#10b981';
           return (
             <div key={company.code} style={{ ...styles.card, borderTopColor: accent }}>
               <div style={{ ...styles.companyCode, color: accent }}>{company.code}</div>
@@ -80,7 +80,7 @@ export default function GradeResults({ allStandards, frontRatios, backRatios, in
                 <div style={styles.waiting}>—</div>
               ) : (
                 <>
-                  <div style={{ ...styles.gradeValue, color: isBelow ? '#444' : '#fff', opacity: isPartial ? 0.6 : 1 }}>
+                  <div style={{ ...styles.gradeValue, color: isBelow ? '#475569' : '#fff', opacity: isPartial ? 0.6 : 1 }}>
                     {grade?.grade ?? '—'}
                     {isPartial && grade?.grade && grade.grade !== 'Below' && <span style={styles.asterisk}>*</span>}
                   </div>
@@ -105,25 +105,28 @@ const styles = {
   partialBadge: {
     fontSize: 11,
     fontWeight: 600,
-    color: '#ffc107',
+    color: '#fbbf24',
     textAlign: 'right',
     padding: '0 2px',
   },
   asterisk: {
     fontSize: 14,
-    color: '#ffc107',
+    color: '#fbbf24',
     verticalAlign: 'super',
     marginLeft: 1,
   },
   row: {
-    display: 'grid',
-    gridTemplateColumns: 'repeat(5, 1fr)',
+    display: 'flex',
     gap: 8,
     flexShrink: 0,
+    overflowX: 'auto',
+    paddingBottom: 4,
   },
   card: {
-    background: '#110f1a',
-    border: '1px solid #1e1b2e',
+    flex: '1 0 0',
+    minWidth: 100,
+    background: '#1e293b',
+    border: '1px solid #334155',
     borderTop: '3px solid',
     borderRadius: 8,
     padding: '8px 8px 10px',
@@ -143,7 +146,7 @@ const styles = {
   gradeLabel: {
     fontSize: 10,
     fontWeight: 600,
-    color: '#777',
+    color: '#94a3b8',
     marginTop: 2,
     whiteSpace: 'nowrap',
     overflow: 'hidden',
@@ -152,7 +155,7 @@ const styles = {
   waiting: {
     fontSize: 22,
     fontWeight: 800,
-    color: '#333',
+    color: '#334155',
     lineHeight: 1.4,
   },
 };
