@@ -79,8 +79,8 @@ const styles = {
     gap: 20,
   },
   companyCard: {
-    background: '#111',
-    border: '1px solid #1a1a1a',
+    background: '#110f1a',
+    border: '1px solid #1e1b2e',
     borderRadius: 12,
     padding: 20,
   },
@@ -94,7 +94,7 @@ const styles = {
     margin: 0,
     fontSize: 18,
     fontWeight: 800,
-    color: '#00e5ff',
+    color: '#7c3aed',
   },
   link: {
     fontSize: 12,
@@ -116,13 +116,13 @@ const styles = {
   th: {
     textAlign: 'left',
     padding: '8px 10px',
-    background: '#0d0d0d',
+    background: '#0c0a14',
     color: '#666',
     fontWeight: 600,
     fontSize: 11,
     textTransform: 'uppercase',
     letterSpacing: '0.06em',
-    borderBottom: '1px solid #1a1a1a',
+    borderBottom: '1px solid #1e1b2e',
   },
   td: {
     padding: '6px 10px',
@@ -144,9 +144,9 @@ const styles = {
   disclaimer: {
     marginTop: 32,
     padding: 16,
-    background: '#111',
+    background: '#110f1a',
     borderRadius: 8,
-    border: '1px solid #1a1a1a',
+    border: '1px solid #1e1b2e',
     fontSize: 12,
     color: '#555',
     textAlign: 'center',
