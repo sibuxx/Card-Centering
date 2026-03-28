@@ -2,6 +2,7 @@ import React, { useState, useEffect, useCallback, useRef } from 'react';
 import ImageCanvas from './components/ImageCanvas.jsx';
 import GradeResults from './components/GradeResults.jsx';
 import Guidelines from './components/Guidelines.jsx';
+import { STANDARDS_DATA } from './data/standards.js';
 
 export default function App() {
   const [allStandards, setAllStandards] = useState([]);
@@ -30,7 +31,7 @@ export default function App() {
     fetch('/api/standards')
       .then((r) => r.json())
       .then(setAllStandards)
-      .catch(console.error);
+      .catch(() => setAllStandards(STANDARDS_DATA));
   }, []);
 
   const handleFileUpload = useCallback((side) => (e) => {
