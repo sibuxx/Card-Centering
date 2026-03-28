@@ -13,10 +13,10 @@ const VERT = ['leftEdge', 'leftBorder', 'rightBorder', 'rightEdge'];
 const HORIZ = ['topEdge', 'topBorder', 'bottomBorder', 'bottomEdge'];
 
 function lc(key, active) {
-  if (active) return '#a78bfa';
-  if (key.includes('Edge')) return '#fbbf24';
-  if (key.includes('Border') && (key.startsWith('left') || key.startsWith('right'))) return '#c084fc';
-  return '#34d399';
+  if (active) return '#A67B45';
+  if (key.includes('Edge')) return '#D4A855';
+  if (key.includes('Border') && (key.startsWith('left') || key.startsWith('right'))) return '#C5975B';
+  return '#7A9E7E';
 }
 
 
@@ -205,12 +205,12 @@ export default function ImageCanvas({ label, imageUrl, onChange, rotation = 0, o
   if (!imageUrl) {
     return (
       <div style={styles.placeholder} onClick={onClickPlaceholder}>
-        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#555" strokeWidth="1.5">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#C5975B" strokeWidth="1.5">
           <rect x="3" y="3" width="18" height="18" rx="2" />
           <circle cx="8.5" cy="8.5" r="1.5" />
           <path d="m21 15-5-5L5 21" />
         </svg>
-        <span style={{ color: '#555', fontSize: 12 }}>Upload or drop {label} image</span>
+        <span style={{ color: '#9E8E7E', fontSize: 12, fontFamily: "'Playfair Display', Georgia, serif", fontStyle: 'italic' }}>Upload or drop {label} image</span>
       </div>
     );
   }
@@ -308,8 +308,9 @@ const styles = {
     flex: '1 1 0', height: 0, minHeight: 80,
     display: 'flex', flexDirection: 'column',
     alignItems: 'center', justifyContent: 'center', gap: 8,
-    border: '2px dashed #2e2a45', borderRadius: 8, background: '#0c0a14',
+    border: '2px dashed #D4C9B8', borderRadius: 8, background: '#F7F3ED',
     cursor: 'pointer',
+    transition: 'border-color 0.2s ease, background 0.2s ease',
   },
   container: {
     position: 'relative',

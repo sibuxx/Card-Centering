@@ -35,11 +35,11 @@ function evaluateGrade(standards, frontLr, frontTb, backLr, backTb) {
 }
 
 const COMPANY_COLORS = {
-  PSA: '#e53935',
-  BGS: '#1e88e5',
-  CGC: '#43a047',
-  SGC: '#fb8c00',
-  TAG: '#8e24aa',
+  PSA: '#A0522D',
+  BGS: '#5B7E9E',
+  CGC: '#6B8E5A',
+  SGC: '#C5975B',
+  TAG: '#8B6B8E',
 };
 
 export default function GradeResults({ allStandards, frontRatios, backRatios, includeFront, includeBack }) {
@@ -80,7 +80,7 @@ export default function GradeResults({ allStandards, frontRatios, backRatios, in
                 <div style={styles.waiting}>—</div>
               ) : (
                 <>
-                  <div style={{ ...styles.gradeValue, color: isBelow ? '#444' : '#fff', opacity: isPartial ? 0.6 : 1 }}>
+                  <div style={{ ...styles.gradeValue, ...(isBelow ? { background: 'none', WebkitTextFillColor: '#D4C9B8', color: '#D4C9B8' } : {}), opacity: isPartial ? 0.6 : 1 }}>
                     {grade?.grade ?? '—'}
                     {isPartial && grade?.grade && grade.grade !== 'Below' && <span style={styles.asterisk}>*</span>}
                   </div>
@@ -105,54 +105,71 @@ const styles = {
   partialBadge: {
     fontSize: 11,
     fontWeight: 600,
-    color: '#ffc107',
+    color: '#C5975B',
     textAlign: 'right',
     padding: '0 2px',
+    fontStyle: 'italic',
+    fontFamily: "'Playfair Display', Georgia, serif",
   },
   asterisk: {
     fontSize: 14,
-    color: '#ffc107',
+    color: '#C5975B',
     verticalAlign: 'super',
     marginLeft: 1,
   },
   row: {
     display: 'grid',
     gridTemplateColumns: 'repeat(5, 1fr)',
-    gap: 8,
+    gap: 10,
     flexShrink: 0,
   },
   card: {
-    background: '#110f1a',
-    border: '1px solid #1e1b2e',
+    background: '#FFFDF9',
+    border: '1px solid #E2D9CC',
     borderTop: '3px solid',
-    borderRadius: 8,
-    padding: '8px 8px 10px',
+    borderRadius: 10,
+    padding: '10px 8px 12px',
     textAlign: 'center',
+    boxShadow: '0 2px 10px rgba(44, 24, 16, 0.04)',
+    animation: 'fadeInUp 0.4s ease both',
+    transition: 'transform 0.2s ease, box-shadow 0.2s ease',
   },
   companyCode: {
-    fontSize: 13,
+    fontSize: 12,
     fontWeight: 800,
-    letterSpacing: '0.1em',
-    marginBottom: 2,
+    letterSpacing: '0.14em',
+    marginBottom: 3,
+    fontFamily: "'DM Sans', sans-serif",
+    textTransform: 'uppercase',
   },
   gradeValue: {
-    fontSize: 24,
-    fontWeight: 800,
+    fontSize: 26,
+    fontWeight: 900,
     lineHeight: 1.15,
+    fontFamily: "'Playfair Display', Georgia, serif",
+    background: 'linear-gradient(90deg, #C5975B 0%, #E8D5A8 25%, #C5975B 50%, #A67B45 75%, #C5975B 100%)',
+    backgroundSize: '200% auto',
+    WebkitBackgroundClip: 'text',
+    WebkitTextFillColor: 'transparent',
+    backgroundClip: 'text',
+    animation: 'foilShimmer 4s linear infinite',
   },
   gradeLabel: {
     fontSize: 10,
     fontWeight: 600,
-    color: '#777',
-    marginTop: 2,
+    color: '#9E8E7E',
+    marginTop: 3,
     whiteSpace: 'nowrap',
     overflow: 'hidden',
     textOverflow: 'ellipsis',
+    fontFamily: "'DM Sans', sans-serif",
+    letterSpacing: '0.02em',
   },
   waiting: {
     fontSize: 22,
     fontWeight: 800,
-    color: '#333',
+    color: '#DDD5CA',
     lineHeight: 1.4,
+    fontFamily: "'Playfair Display', Georgia, serif",
   },
 };
