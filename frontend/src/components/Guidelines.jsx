@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function Guidelines({ allStandards }) {
+export default function Guidelines({ allStandards, isMobile = false }) {
   if (!allStandards.length) {
     return <div style={styles.loading}>Loading guidelines...</div>;
   }
@@ -13,7 +13,7 @@ export default function Guidelines({ allStandards }) {
         "No Limit" means any centering is accepted for that side.
       </p>
 
-      <div style={styles.grid}>
+      <div style={isMobile ? mobileGuideStyles.grid : styles.grid}>
         {allStandards.map((company) => (
           <div key={company.code} style={styles.companyCard}>
             <div style={styles.companyHeader}>
@@ -151,5 +151,13 @@ const styles = {
     color: '#94a3b8',
     textAlign: 'center',
     lineHeight: 1.5,
+  },
+};
+
+const mobileGuideStyles = {
+  grid: {
+    display: 'grid',
+    gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+    gap: 16,
   },
 };

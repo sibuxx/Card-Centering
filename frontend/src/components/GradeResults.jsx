@@ -42,7 +42,7 @@ const COMPANY_COLORS = {
   TAG: '#8e24aa',
 };
 
-export default function GradeResults({ allStandards, frontRatios, backRatios, includeFront, includeBack }) {
+export default function GradeResults({ allStandards, frontRatios, backRatios, includeFront, includeBack, isMobile = false }) {
   const effFront = includeFront ? frontRatios : null;
   const effBack = includeBack ? backRatios : null;
   const hasFront = !!(effFront?.lr && effFront?.tb);
@@ -69,12 +69,12 @@ export default function GradeResults({ allStandards, frontRatios, backRatios, in
           Indicative — upload {!hasFront ? 'front' : 'back'} for complete grade
         </div>
       )}
-      <div style={styles.row}>
+      <div style={isMobile ? mobileStyles.row : styles.row}>
         {results.map(({ company, grade }) => {
           const isBelow = grade?.grade === 'Below';
           const accent = COMPANY_COLORS[company.code] || '#10b981';
           return (
-            <div key={company.code} style={{ ...styles.card, borderTopColor: accent }}>
+            <div key={company.code} style={{ ...(isMobile ? mobileStyles.card : styles.card), borderTopColor: accent }}>
               <div style={{ ...styles.companyCode, color: accent }}>{company.code}</div>
               {!hasAny ? (
                 <div style={styles.waiting}>—</div>
@@ -157,5 +157,24 @@ const styles = {
     fontWeight: 800,
     color: '#334155',
     lineHeight: 1.4,
+  },
+};
+
+const mobileStyles = {
+  row: {
+    display: 'grid',
+    gridTemplateColumns: '1fr 1fr',
+    gap: 6,
+    flexShrink: 0,
+    paddingBottom: 4,
+  },
+  card: {
+    minWidth: 0,
+    background: '#1e293b',
+    border: '1px solid #334155',
+    borderTop: '3px solid',
+    borderRadius: 8,
+    padding: '6px 6px 8px',
+    textAlign: 'center',
   },
 };

@@ -305,7 +305,7 @@ function clamp(v, min, max) { return Math.max(min, Math.min(max, v)); }
 
 const styles = {
   placeholder: {
-    flex: '1 1 0', height: 0, minHeight: 80,
+    flex: '1 1 0', minHeight: 200,
     display: 'flex', flexDirection: 'column',
     alignItems: 'center', justifyContent: 'center', gap: 8,
     border: '2px dashed #334155', borderRadius: 8, background: '#0f172a',
@@ -313,7 +313,7 @@ const styles = {
   },
   container: {
     position: 'relative',
-    flex: '1 1 0', height: 0,
+    flex: '1 1 0', minHeight: 200,
     display: 'flex', justifyContent: 'center', alignItems: 'center',
     cursor: 'crosshair',
     userSelect: 'none', touchAction: 'none',
